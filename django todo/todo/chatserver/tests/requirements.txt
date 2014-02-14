@@ -1,0 +1,4 @@
+nose
+django-nose
+websocket-client
+requests

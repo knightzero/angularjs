@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en" ng-app="Todo">
+    <head>
+        <meta charset="utf-8">
+        <title>Todo</title>
+        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+        <link href="{% static "css/style.css" %}" rel="stylesheet">
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+        <script src="{% static "js/lib/angular/angular.min.js" %}"></script>
+        <script src="{% static "js/underscore-min.js" %}"></script>
+        <script src="{% static "js/djng-websocket.js" %}"></script>
+        <script src="{% static "js/lib/todo.js" %}"></script>
+        
+    </body>
+</html>

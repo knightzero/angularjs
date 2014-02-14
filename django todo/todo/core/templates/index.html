@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="well col-lg-4 col-lg-offset-4"  ng-controller="MyFormController">
+                {% verbatim %}
+                    <h2>Total todos: {{getTotalTodos()}}</h2>
+                    <ul class="list-unstyled">
+                        <li ng-repeat="todo in todos">
+                            <input type="checkbox" ng-model="todo.done">
+                            <span class="done-{{todo.done}}">{{todo.text}}</span>
+                        </li>
+                    </ul>
+                    <form class="form-horizontal">
+                        <input type="text" name="text" ng-model="formTodoText" ng-model-instant>
+                        <button class="btn" ng-click="addTodo()"><i class="glyphicon  glyphicon-plus"></i> Add</button>
+                    </form>
+                    <br/>
+                    <button class="btn btn-lg" ng-click="clearCompleted()"><i class="glyphicon  glyphicon-trash"></i> ClearCompleted</button>
+                {% endverbatim %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
